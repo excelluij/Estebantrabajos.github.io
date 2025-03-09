@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biografía de Steve Jobs</title>
+    <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Apple_logo_dark_grey.svg/758px-Apple_logo_dark_grey.svg.png?20220821122150">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #141e30, #243b55);
+            color: white;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            margin-top: 30px;
+            animation: aparecer 1s ease-in-out;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #ffcc00;
+            animation: titulos 1s ease-in-out;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            border-radius: 10px;
+            max-width: 100%;
+            animation: imagen 1s ease-in-out;
+        }
+        p {
+            text-align: justify;
+            line-height: 1.8;
+        }
+        .timeline {
+            list-style: none;
+            padding: 0;
+        }
+        .timeline li {
+            background: rgba(255, 255, 255, 0.2);
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+        }
+        .timeline li:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.05);
+        }
+        .hidden {
+            display: none;
+        }
+        iframe {
+            display: block;
+            margin: 20px auto;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+        }
+        .logo {
+            display: inline-block;
+            margin: 10px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            animation: rotar 5s infinite linear;
+        }
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        @keyframes titulos {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        @keyframes imagen {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        @keyframes rotar {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Steve Jobs</h1>
+        <img src="https://es.digitaltrends.com/wp-content/uploads/2021/02/steve-jobs-portada.jpg?fit=720%2C480&p=1" alt="Steve Jobs">
+        
+        <h2>Biografía Interactiva</h2>
+        <ul class="timeline">
+            
+            <!-- Primeros años -->
+            <li onclick="toggleContent('early-years')">Primeros años (1955-1972)</li>
+            <p id="early-years" class="hidden">
+                Steve Paul Jobs nació el 24 de febrero de 1955 en San Francisco, California. Fue adoptado por Paul y Clara Jobs y creció en Mountain View, donde su padre le enseñó a reparar y ensamblar dispositivos electrónicos en el garaje familiar. Desde joven mostró interés por la tecnología y la creatividad. Durante su adolescencia en Homestead High School, conoció a Steve Wozniak en un club de electrónica en Hewlett-Packard (HP). Más tarde trabajó brevemente en Atari antes de viajar a la India en busca de iluminación espiritual.
+            </p>
+
+            <!-- Fundación de Apple -->
+            <li onclick="toggleContent('apple-foundation')">Fundación de Apple (1976-1985)</li>
+            <p id="apple-foundation" class="hidden">
+                En abril de 1976, Jobs y Wozniak fundaron Apple Computer en el garaje de los padres de Jobs. Su primer producto, la Apple I, fue un éxito modesto que sentó las bases para la Apple II en 1977, una computadora que revolucionó el mercado personal y convirtió a Apple en una empresa multimillonaria. En los años siguientes, Jobs lideró el desarrollo del Macintosh (1984), aunque su relación con la junta directiva se deterioró debido a su estilo autoritario y los problemas financieros del proyecto Macintosh.
+            </p>
+
+           <!-- Expulsión de Apple -->
+           <li onclick="toggleContent('expulsion')">Expulsión de Apple (1985)</li>
+           <p id="expulsion" class="hidden">
+               En un giro inesperado, Jobs fue expulsado de Apple en 1985 tras conflictos con John Sculley y la junta directiva. Este evento marcó un punto bajo en su carrera pero también lo impulsó a explorar nuevas oportunidades.
+           </p>
+
+           <!-- NeXT y Pixar -->
+           <li onclick="toggleContent('next-pixar')">NeXT y Pixar (1985-1997)</li>
+           <p id="next-pixar" class="hidden">
+               Tras dejar Apple, Jobs fundó NeXT Inc., una empresa enfocada en computadoras avanzadas para educación y negocios. Paralelamente adquirió Pixar por $10 millones a George Lucas. Pixar revolucionó la animación con "Toy Story" (1995), la primera película animada completamente por computadora. Aunque NeXT no tuvo éxito comercial significativo, su tecnología sería crucial para el futuro de Apple.
+           </p>
+
+           <!-- Regreso a Apple -->
+           <li onclick="toggleContent('return-to-apple')">Regreso a Apple (1997-2011)</li>
+           <p id="return-to-apple" class="hidden">
+               En 1997, Apple compró NeXT por $429 millones y Jobs regresó como CEO interino. Bajo su liderazgo visionario, Apple lanzó productos icónicos como el iMac (1998), el iPod (2001), iTunes Store (2003), el iPhone (2007) y el iPad (2010). Estos productos transformaron industrias enteras y llevaron a Apple a convertirse en una de las empresas más valiosas del mundo.
+           </p>
+
+           <!-- Últimos años -->
+           <li onclick="toggleContent('legacy')">Últimos años y legado (2011)</li>
+           <p id="legacy" class="hidden">
+               Steve Jobs falleció el 5 de octubre de 2011 tras una larga batalla contra el cáncer pancreático. Su legado vive no solo en los productos que ayudó a crear sino también en la manera en que transformó la tecnología moderna al hacerla accesible e intuitiva para todos.
+           </p>
+
+       </ul>
+
+       <!-- Videos sobre Steve Jobs -->
+       <h2>Videos sobre Steve Jobs</h2>
+       <iframe src="https://www.youtube.com/embed/UF8uR6Z6KLc" allowfullscreen></iframe> <!-- Discurso Stanford -->
+       <iframe src="https://www.youtube.com/embed/Tuw8hxrFBH8" allowfullscreen></iframe> <!-- Presentación del iPhone -->
+       <iframe src="https://www.youtube.com/embed/ylN5rRX5Ass" allowfullscreen></iframe> <!-- Historia resumida -->
+
+       <!-- Podcasts sobre Steve Jobs -->
+       <h2>Podcasts sobre Steve Jobs</h2>
+       <iframe src="https://open.spotify.com/embed/episode/1rUbCbidC2eigLzm4A6ucg" allowfullscreen></iframe> <!-- Moonshots Podcast -->
+       <iframe src="https://open.spotify.com/embed/show/2Kkq4sFTSI1wxQM9BvcMtU" allowfullscreen></iframe> <!-- iSenaCode Live -->
+       <a href="https://open.spotify.com/show/2Kkq4sFTSI1wxQM9BvcMtU" target="_blank"><img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Spotify_icon.svg/1982px-Spotify_icon.svg.png" alt="Spotify Logo"></a>
+       <a href="https://www.youtube.com/user/Apple" target="_blank"><img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/1024px-YouTube_full-color_icon_%282017%29.svg.png" alt="YouTube Logo"></a>
+       <a href="https://www.instagram.com/apple/" target="_blank"><img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" alt="Instagram Logo"></a>
+       <a href="https://twitter.com/Apple" target="_blank"><img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/768px-Logo_of_Twitter.svg.png" alt="Twitter Logo"></a>
+
+       <!-- Entrevistas históricas -->
+       <h2 style="background-color: #ffcc00; padding: 10px; border-radius: 10px; color: black;">Entrevistas históricas</h2>
+       <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+           <div style="background: rgba(255, 255, 255, 0.2); margin: 10px; padding: 15px; border-radius: 8px; width: calc(33.33% - 20px);">
+               <h3 style="color: white;">Steve Jobs: The Lost Interview (1995)</h3>
+               <p>Una entrevista profunda realizada por Robert X. Cringely para el documental "The Triumph of the Nerds". Jobs habla sobre su vida y la historia de Apple.</p>
+               <a href="https://sameerbajaj.com/jobs/" target="_blank">Ver más</a>
+           </div>
+           <div style="background: rgba(255, 255, 255, 0.2); margin: 10px; padding: 15px; border-radius: 8px; width: calc(33.33% - 20px);">
+               <h3 style="color: white;">Bill Gates y Steve Jobs juntos (D5 Conference)</h3>
+               <p>Una conversación histórica entre dos gigantes tecnológicos en la D5 Conference de 2007.</p>
+               <a href="https://www.youtube.com/watch?v=boCM-3W6-Sk" target="_blank">Ver la entrevista</a>
+           </div>
+           <div style="background: rgba(255, 255, 255, 0.2); margin: 10px; padding: 15px; border-radius: 8px; width: calc(33.33% - 20px);">
+               <h3 style="color: white;">Entrevista en Playboy (1985)</h3>
+               <p>Una entrevista clásica donde Jobs comparte sus visiones sobre tecnología y sociedad.</p>
+               <a href="https://wacom.compolaser.com/blog/wacom-experience-center-de-madrid-en-compolaser-1/post/releyendo-la-entrevista-a-steve-jobs-en-playboy-51" target="_blank">Leer más</a>
+           </div>
+       </div>
+
+       <!-- Noticias sobre Steve Jobs -->
+       <h2 style="background-color: #ffcc00; padding: 10px; border-radius: 10px; color: black;">Noticias sobre Steve Jobs</h2>
+       <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+           <div style="background: rgba(255, 255, 255, 0.2); margin: 10px; padding: 15px; border-radius: 8px; width: calc(33.33% - 20px);">
+               <h3 style="color: white;">Apple anuncia el fallecimiento de Steve Jobs</h3>
+               <p>El anuncio oficial de Apple tras su fallecimiento en 2011.</p>
+               <a href="https://www.apple.com/newsroom/2011/10/05Apple-Media-Advisory-Steve-Jobs/" target="_blank">Ver noticia</a>
+           </div>
+           <div style="background: rgba(255, 255, 255, 0.2); margin: 10px; padding: 15px; border-radius: 8px; width: calc(33.33% - 20px);">
+               <h3 style="color: white;">Biografía detallada de Steve Jobs</h3>
+               <p>Una biografía completa sobre su vida y logros en Biography.com.</p>
+               <a href="https://www.biography.com/business-leaders/steve-jobs" target="_blank">Leer biografía</a>
+           </div>
+           <div style="background: rgba(255, 255, 255, 0.2); margin: 10px; padding: 15px; border-radius: 8px; width: calc(33.33% - 20px);">
+               <h3 style="color: white;">Homenaje a Steve Jobs como pionero del diseño</h3>
+               <p>Un homenaje a su legado en el diseño y la tecnología por WIPO.</p>
+               <a href="https://www.wipo.int/web/wipo-magazine/articles/homage-to-steve-jobs-a-pioneer-of-function-and-form-37952" target="_blank">Ver homenaje</a>
+           </div>
+       </div>
+
+    </div>
+
+    <!-- Script para mostrar u ocultar contenido -->
+    <script>
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                content.style.transition = "opacity .5s ease-in-out";
+                content.style.opacity = "1";
+            } else {
+                content.classList.add('hidden');
+                content.style.opacity = "0";
+                content.style.transition = "opacity .5s ease-in-out";
+            }
+        }
+    </script>
+</body>
+</html>
